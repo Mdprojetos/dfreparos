@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="DF Reparos: pintura residencial, comercial e revitalização de ambientes no Distrito Federal, com 35 anos de experiência. Orçamento pelo WhatsApp (61) 99276-5317.">
+<meta name="theme-color" content="#163E86">
+<meta property="og:title" content="DF Reparos | Pintura com 35 anos de experiência">
+<meta property="og:description" content="Pintura residencial, comercial e revitalização de ambientes. Orçamento pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<title>DF Reparos | Pintura com 35 anos de experiência</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+/* Layout: a parede como tela. Grade assimétrica alinhada à esquerda sobre branco,
+   com o panfleto da empresa como papel de parede bem suave atrás de tudo;
+   um painel de azulejos geométricos em dois azuis é o único elemento ousado;
+   os três serviços viram três faixas de parede pintadas, uma cor para cada. */
+:root{
+  color-scheme: light;
+  --branco:#FFFFFF;
+  --nevoa:#EEF4FB;          /* branco azulado, superfícies secundárias */
+  --azul-claro:#A9CDF5;
+  --azul-claro-2:#D7E8FB;  /* azul claro diluído, fundos de azulejo */
+  --azul-escuro:#163E86;   /* azul royal, próximo ao do panfleto */
+  --azul-profundo:#0B1F45; /* texto e rodapé */
+  --cinza:#4C5A70;          /* texto secundário, cinza puxado para o azul */
+  --linha:#D6E0EE;
+  --branco-70:rgb(255 255 255 / .74);
+  --branco-25:rgb(255 255 255 / .25);
+  --sombra:rgb(11 31 69 / .28);
+  /* faixas translúcidas por cima do papel de parede */
+  --vidro-forte:rgb(255 255 255 / .9);
+  --vidro-nevoa:rgb(238 244 251 / .6);
+  --vidro-escuro:rgb(22 62 134 / .95);
+  --vidro-claro:rgb(169 205 245 / .93);
+  --vidro-profundo:rgb(11 31 69 / .97);
+  --foco:var(--azul-escuro);
+
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --largo:118%;   /* largura expandida para títulos */
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --max:1200px;
+  --gutter:clamp(16px,4vw,44px);
+
+  /* escala tipográfica (razão ~1.25) */
+  --t-0:1.0625rem;
+  --t-1:1.25rem;
+  --t-2:1.6rem;
+  --t-3:clamp(2rem,4.2vw,3.25rem);
+  --t-4:clamp(2.6rem,6.4vw,5.4rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{position:relative;z-index:0;margin:0;background:var(--branco);color:var(--azul-profundo);font-family:var(--font);font-size:var(--t-0);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:var(--font);text-wrap:balance;color:inherit}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--foco);outline-offset:3px}
+
+.wrap{width:100%;max-width:calc(var(--max) + 2 * var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.sec{padding-block:clamp(72px,10vw,136px);scroll-margin-top:72px}
+
+/* ---------- Azulejos: formas geométricas desenhadas só com gradientes ---------- */
+.t{display:block;aspect-ratio:1/1;background:var(--b)}
+.t.cheio{background:var(--a)}
+.t.q-br{background:radial-gradient(circle farthest-side at 100% 100%,var(--a) 99.4%,var(--b) 100%)}
+.t.q-bl{background:radial-gradient(circle farthest-side at 0 100%,var(--a) 99.4%,var(--b) 100%)}
+.t.q-tr{background:radial-gradient(circle farthest-side at 100% 0,var(--a) 99.4%,var(--b) 100%)}
+.t.q-tl{background:radial-gradient(circle farthest-side at 0 0,var(--a) 99.4%,var(--b) 100%)}
+.t.meia{background:radial-gradient(circle farthest-side at 50% 100%,var(--a) 49.6%,var(--b) 50%)}
+.t.meia-topo{background:radial-gradient(circle farthest-side at 50% 0,var(--a) 49.6%,var(--b) 50%)}
+.t.circ{background:radial-gradient(circle closest-side,var(--a) 79.4%,var(--b) 80%)}
+.t.tri{background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%)}
+.t.tri2{background:linear-gradient(45deg,var(--a) 50%,var(--b) 50%)}
+.t.listras{background:repeating-linear-gradient(90deg,var(--a) 0 12.5%,var(--b) 12.5% 25%)}
+.t.quad{background:linear-gradient(var(--a),var(--a)) 50% 50%/46% 46% no-repeat,var(--b)}
+
+/* ---------- Botões ---------- */
+.btn{
+  --bg:var(--azul-escuro);--fg:var(--branco);--borda:var(--azul-escuro);
+  --tinta:var(--azul-claro);--fg-h:var(--azul-profundo);
+  position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  min-height:52px;padding:.8em 1.6em;border-radius:999px;
+  border:2px solid var(--borda);background:var(--bg);color:var(--fg);
+  font:600 1rem/1.1 var(--font);text-decoration:none;cursor:pointer;
+  transition:color .4s var(--ease),border-color .4s var(--ease),transform .18s var(--ease);
+}
+/* a "demão": uma camada de tinta que passa da esquerda para a direita */
+.btn::before{
+  content:"";position:absolute;inset:-2px;z-index:-1;border-radius:inherit;
+  background:var(--tinta);transform:scaleX(0);transform-origin:100% 50%;
+  transition:transform .5s var(--ease);
+}
+.btn svg{width:1.2em;height:1.2em;flex:none;transition:transform .45s var(--ease)}
+.btn:active{transform:scale(.96)}
+@media (hover:hover){
+  .btn:hover{color:var(--fg-h);border-color:var(--tinta)}
+  .btn:hover::before{transform:scaleX(1);transform-origin:0 50%}
+  .btn:hover svg{transform:rotate(-14deg) scale(1.08)}
+}
+/* contorno que enche de baixo para cima */
+.btn--linha{--bg:transparent;--fg:var(--azul-escuro);--borda:var(--azul-escuro);--tinta:var(--azul-escuro);--fg-h:var(--branco)}
+.btn--linha::before{transform:scaleY(0);transform-origin:50% 100%}
+@media (hover:hover){.btn--linha:hover::before{transform:scaleY(1);transform-origin:50% 100%}}
+/* variantes sobre fundo azul-escuro */
+.btn--claro{--bg:var(--azul-claro);--fg:var(--azul-profundo);--borda:var(--azul-claro);--tinta:var(--branco);--fg-h:var(--azul-profundo)}
+.btn--linha-clara{--bg:transparent;--fg:var(--branco);--borda:var(--branco-25);--tinta:var(--branco);--fg-h:var(--azul-profundo)}
+.btn--linha-clara::before{transform:scaleY(0);transform-origin:50% 100%}
+@media (hover:hover){.btn--linha-clara:hover::before{transform:scaleY(1);transform-origin:50% 100%}}
+.btn--sm{min-height:44px;padding:.6em 1.2em;font-size:.95rem}
+
+/* link com sublinhado que se pinta */
+.link-pinta{
+  display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none;
+  background:linear-gradient(currentColor,currentColor) 0 calc(100% - 8px)/100% 2px no-repeat;
+  transition:background-size .45s var(--ease);
+}
+@media (hover:hover){
+  .link-pinta{background-size:0 2px}
+  .link-pinta:hover,.link-pinta:focus-visible{background-size:100% 2px}
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--vidro-forte);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:box-shadow .3s var(--ease)}
+.topo.rolou{box-shadow:0 1px 0 var(--linha),0 10px 28px -20px var(--sombra)}
+.topo__in{display:flex;align-items:center;gap:20px;min-height:76px}
+.marca{display:inline-flex;align-items:center;gap:12px;margin-right:auto;text-decoration:none;color:var(--azul-escuro)}
+.marca__sinal{display:grid;grid-template-columns:repeat(2,15px)}
+.marca__sinal .t{width:15px}
+.marca__nome{font-size:1.3rem;line-height:1;font-weight:800;font-stretch:125%;letter-spacing:-.01em;white-space:nowrap}
+.marca__nome span{font-weight:400;font-stretch:100%}
+.menu{display:flex;gap:2px}
+.menu a{position:relative;padding:12px 14px;text-decoration:none;font-weight:500;color:var(--azul-profundo)}
+.menu a::after{content:"";position:absolute;left:14px;right:14px;bottom:8px;height:2px;background:var(--azul-claro);transform:scaleX(0);transform-origin:100% 50%;transition:transform .4s var(--ease)}
+@media (hover:hover){.menu a:hover::after{transform:scaleX(1);transform-origin:0 50%}}
+.hamb{display:none}
+
+@media (max-width:879px){
+  .hamb{display:inline-grid;place-content:center;gap:5px;width:46px;height:46px;padding:0;border:2px solid var(--azul-escuro);border-radius:50%;background:var(--branco);cursor:pointer}
+  .hamb span{display:block;width:18px;height:2px;background:var(--azul-escuro);transition:transform .35s var(--ease),opacity .2s}
+  .hamb[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamb[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamb[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .menu{
+    position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;
+    padding:4px var(--gutter) 24px;background:var(--branco);
+    border-bottom:1px solid var(--linha);box-shadow:0 24px 32px -28px var(--sombra);
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s linear .3s;
+  }
+  .menu.aberto{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .menu a{padding:16px 0;font-size:var(--t-1);font-weight:700;font-stretch:110%;border-bottom:1px solid var(--linha)}
+  .menu a::after{display:none}
+}
+@media (max-width:429px){.topo__cta{display:none}}
+
+/* ---------- Hero ---------- */
+/* Papel de parede: o panfleto da empresa fica fixo atrás de todo o site, bem apagado,
+   e aparece pelas áreas brancas conforme a página rola. */
+body::before{
+  content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;
+  background:url("fundo.webp") 70% 20% / cover no-repeat;
+  opacity:.08;filter:saturate(.9);
+}
+/* no computador a imagem fica ampliada e mais difusa, então pode ser um pouco menos transparente */
+@media (min-width:900px){body::before{opacity:.12}}
+
+.hero{padding-block:clamp(40px,7vw,88px) clamp(56px,8vw,112px)}
+.hero__grid{display:grid;gap:clamp(48px,6vw,80px);align-items:center}
+.hero__texto{max-width:620px}
+
+.parede{position:relative;width:100%;max-width:500px;justify-self:center;margin:0}
+.azulejos{display:grid;grid-template-columns:repeat(4,1fr)}
+.azulejos .t{animation:assenta .75s var(--ease) backwards;animation-delay:calc(var(--i) * 75ms + 200ms)}
+@keyframes assenta{from{opacity:0;transform:scale(.5) rotate(-12deg)}}
+@media (hover:hover){
+  .azulejos .t{transition:transform .55s var(--ease)}
+  .azulejos .t:hover{transform:rotate(90deg)}
+}
+.parede figcaption{margin-top:14px;font-size:.88rem;color:var(--cinza)}
+.hero h1{font-size:var(--t-4);font-weight:800;font-stretch:var(--largo);line-height:.98;letter-spacing:-.03em;color:var(--azul-escuro);max-width:11ch}
+.hero__lead{margin-top:28px;max-width:34em;font-size:var(--t-1);line-height:1.5;color:var(--cinza)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.contatos{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:40px;padding-top:24px;border-top:1px solid var(--linha);font-size:.98rem;color:var(--cinza)}
+.contatos a{color:var(--azul-escuro);font-weight:600;font-variant-numeric:tabular-nums}
+
+@media (min-width:900px){
+  .hero__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .parede{justify-self:end}
+}
+
+/* ---------- Cabeçalho de seção ---------- */
+.cab{display:grid;gap:20px 64px;margin-bottom:clamp(40px,5vw,72px)}
+.cab h2{font-size:var(--t-3);font-weight:800;font-stretch:var(--largo);line-height:1.02;letter-spacing:-.025em;color:var(--azul-escuro);max-width:16ch}
+.cab p{max-width:30em;color:var(--cinza)}
+@media (min-width:900px){.cab{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:end}}
+
+/* ---------- Serviços: três faixas de parede ---------- */
+.faixas{display:grid}
+.faixa{
+  --fundo:var(--vidro-escuro);--texto:var(--branco);--apoio:var(--branco-70);--marcador:var(--azul-claro);
+  display:flex;flex-direction:column;gap:18px;min-width:0;
+  padding:clamp(28px,4vw,48px) var(--gutter) clamp(36px,4vw,52px);
+  background:var(--fundo);color:var(--texto);--foco:var(--azul-claro);
+}
+.faixa--claro{--fundo:var(--vidro-claro);--texto:var(--azul-profundo);--apoio:var(--azul-escuro);--marcador:var(--azul-escuro);--foco:var(--azul-profundo)}
+.faixa--nevoa{--fundo:var(--vidro-nevoa);--texto:var(--azul-profundo);--apoio:var(--cinza);--marcador:var(--azul-claro);--foco:var(--azul-escuro)}
+.faixa .t{width:clamp(72px,8vw,104px);margin-bottom:12px}
+.faixa h3{font-size:var(--t-2);font-weight:750;font-stretch:112%;line-height:1.1;letter-spacing:-.015em}
+.faixa > p{color:var(--apoio);max-width:32em}
+.faixa ul{display:grid;gap:10px;margin-top:4px}
+.faixa li{position:relative;padding-left:22px;line-height:1.45}
+.faixa li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:10px;background:var(--marcador)}
+.faixa .link-pinta{margin-top:auto;padding-top:12px;align-self:flex-start}
+@media (min-width:880px){
+  .faixas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .faixa{padding-inline:clamp(28px,3.4vw,52px)}
+}
+
+/* ---------- Processo ---------- */
+.servicos{scroll-margin-top:72px}
+.servicos__topo{padding-block:clamp(72px,10vw,136px) clamp(40px,5vw,72px)}
+.servicos__topo .cab{margin-bottom:0}
+.passos{position:relative;display:grid;gap:36px}
+.passos::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:var(--linha)}
+.passo{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:22px;align-items:start;align-content:start}
+.passo__num{
+  position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;
+  background:var(--branco);border:2px solid var(--azul-escuro);color:var(--azul-escuro);
+  font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums;
+}
+.passo h3{font-size:var(--t-1);font-weight:700;font-stretch:108%;line-height:1.25;color:var(--azul-escuro);margin:12px 0 8px}
+.passo p{color:var(--cinza);max-width:28em}
+@media (min-width:880px){
+  .passos{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+  .passos::before{left:0;right:0;top:27px;bottom:auto;width:auto;height:2px}
+  .passo{grid-template-columns:1fr;row-gap:8px}
+  .passo h3{margin-top:18px}
+}
+
+/* ---------- Experiência ---------- */
+.exp{background:var(--vidro-nevoa)}
+.exp__grid{display:grid;gap:48px}
+.exp h2{font-size:var(--t-3);font-weight:800;font-stretch:var(--largo);line-height:1.02;letter-spacing:-.025em;color:var(--azul-escuro);max-width:14ch}
+.exp__texto{display:grid;gap:20px;max-width:36em;color:var(--cinza);font-size:var(--t-1);line-height:1.55}
+.exp__texto strong{color:var(--azul-escuro);font-weight:700}
+.pontos{display:grid;gap:28px;margin-top:clamp(40px,5vw,64px);padding-top:32px;border-top:2px solid var(--azul-escuro)}
+.pontos h3{font-size:1.1rem;font-weight:700;color:var(--azul-escuro);margin-bottom:6px}
+.pontos p{color:var(--cinza)}
+@media (min-width:900px){
+  .exp__grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:start}
+  .pontos{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+}
+
+/* ---------- Contato ---------- */
+.contato{position:relative;overflow:hidden;background:var(--vidro-escuro);color:var(--branco);--foco:var(--azul-claro)}
+.contato__grid{position:relative;z-index:1;display:grid;gap:48px;align-items:center}
+.contato h2{font-size:var(--t-4);font-weight:800;font-stretch:var(--largo);line-height:.98;letter-spacing:-.03em;max-width:10ch}
+.contato__lead{margin-top:24px;max-width:30em;font-size:var(--t-1);line-height:1.5;color:var(--branco-70)}
+.contato .acoes{margin-top:32px}
+.cartao{display:grid;gap:24px;padding:clamp(24px,3vw,36px);background:var(--azul-profundo);min-width:0}
+.cartao__rot{display:block;margin-bottom:6px;font-size:.92rem;color:var(--branco-70)}
+.cartao__num{display:block;font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;font-stretch:108%;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--branco)}
+.cartao__linha{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.cartao hr{border:0;border-top:1px solid var(--branco-25);margin:0}
+.cartao a.link-pinta{font-size:var(--t-1);color:var(--branco)}
+.cartao__txt{font-size:var(--t-1);font-weight:600;color:var(--branco)}
+.copiar.ok{--borda:var(--azul-claro);--fg:var(--azul-claro)}
+.contato__deco{position:absolute;right:calc(-1 * clamp(60px,8vw,120px));bottom:calc(-1 * clamp(60px,8vw,120px));width:clamp(220px,30vw,420px);--a:rgb(169 205 245 / .14);--b:transparent;pointer-events:none}
+@media (min-width:900px){.contato__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+
+/* ---------- Rodapé ---------- */
+.rodape{background:var(--vidro-profundo);color:var(--branco-70);padding-block:48px calc(104px + env(safe-area-inset-bottom,0px));font-size:.95rem;--foco:var(--azul-claro)}
+.rodape__in{display:grid;gap:28px}
+.rodape .marca{color:var(--branco)}
+.rodape nav{display:flex;flex-wrap:wrap;gap:4px 24px}
+.rodape nav a{text-decoration:none;color:var(--branco)}
+.rodape__pe{padding-top:24px;border-top:1px solid var(--branco-25)}
+@media (min-width:880px){
+  .rodape{padding-bottom:calc(48px + env(safe-area-inset-bottom,0px))}
+  .rodape__in{grid-template-columns:1fr auto;align-items:center}
+  .rodape__pe{grid-column:1 / -1}
+}
+
+/* ---------- Botão flutuante ---------- */
+.flutuante{
+  position:fixed;z-index:60;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  display:inline-flex;align-items:center;gap:0;height:60px;padding:0 17px;border-radius:999px;
+  background:var(--azul-escuro);color:var(--branco);border:2px solid var(--azul-claro);
+  text-decoration:none;font-weight:600;box-shadow:0 14px 30px -12px var(--sombra);
+  transition:gap .45s var(--ease),transform .2s var(--ease),background .3s var(--ease),color .3s var(--ease);
+  --foco:var(--azul-escuro);
+}
+.flutuante svg{width:24px;height:24px;flex:none;transition:transform .45s var(--ease)}
+.flutuante__txt{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s var(--ease)}
+.flutuante:active{transform:scale(.94)}
+@media (hover:hover){
+  .flutuante:hover,.flutuante:focus-visible{gap:10px;background:var(--azul-claro);color:var(--azul-profundo)}
+  .flutuante:hover .flutuante__txt,.flutuante:focus-visible .flutuante__txt{max-width:200px}
+  .flutuante:hover svg{transform:rotate(-14deg)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<header class="topo" id="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="#inicio" aria-label="DF Reparos, voltar ao início">
+      <span class="marca__sinal" aria-hidden="true">
+        <i class="t q-br" style="--a:var(--azul-escuro);--b:var(--azul-claro)"></i>
+        <i class="t cheio" style="--a:var(--azul-escuro)"></i>
+        <i class="t cheio" style="--a:var(--azul-claro)"></i>
+        <i class="t q-tl" style="--a:var(--azul-claro);--b:var(--azul-escuro)"></i>
+      </span>
+      <span class="marca__nome">DF <span>Reparos</span></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como trabalhamos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn--sm topo__cta" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="hamb" id="hamb" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero__grid">
+      <div class="hero__texto">
+        <h1>Pintura com 35 anos de experiência.</h1>
+        <p class="hero__lead">Pintura residencial, comercial e revitalização de ambientes. Do preparo da parede à limpeza final, com orçamento pelo WhatsApp.</p>
+        <div class="acoes">
+          <a class="btn" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.2a8.5 8.5 0 1 1 15.5-4.7z"/><path d="M9 10.5h6M9 13.5h4"/></svg>
+            <span>Pedir orçamento no WhatsApp</span>
+          </a>
+          <a class="btn btn--linha" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="contatos">
+          <span>WhatsApp <a href="https://wa.me/5561992765317" target="_blank" rel="noopener">(61) 99276-5317</a></span>
+          <span>Instagram <a href="https://www.instagram.com/dfreparos_/" target="_blank" rel="noopener">@dfreparos_</a></span>
+        </div>
+      </div>
+
+      <figure class="parede">
+        <div class="azulejos" aria-hidden="true">
+          <i class="t q-br"      style="--a:var(--azul-escuro);--b:var(--azul-claro);--i:0"></i>
+          <i class="t q-bl"      style="--a:var(--azul-escuro);--b:var(--azul-claro);--i:1"></i>
+          <i class="t meia"      style="--a:var(--azul-claro);--b:var(--azul-claro-2);--i:2"></i>
+          <i class="t cheio"     style="--a:var(--azul-escuro);--i:3"></i>
+
+          <i class="t q-tr"      style="--a:var(--azul-escuro);--b:var(--azul-claro);--i:1"></i>
+          <i class="t q-tl"      style="--a:var(--azul-escuro);--b:var(--azul-claro);--i:2"></i>
+          <i class="t tri"       style="--a:var(--azul-escuro);--b:var(--branco);--i:3"></i>
+          <i class="t circ"      style="--a:var(--branco);--b:var(--azul-claro);--i:4"></i>
+
+          <i class="t listras"   style="--a:var(--azul-claro);--b:var(--branco);--i:2"></i>
+          <i class="t quad"      style="--a:var(--azul-escuro);--b:var(--azul-claro-2);--i:3"></i>
+          <i class="t q-br"      style="--a:var(--azul-claro);--b:var(--azul-escuro);--i:4"></i>
+          <i class="t q-bl"      style="--a:var(--azul-claro);--b:var(--azul-escuro);--i:5"></i>
+
+          <i class="t meia-topo" style="--a:var(--azul-escuro);--b:var(--azul-claro-2);--i:3"></i>
+          <i class="t tri2"      style="--a:var(--azul-claro);--b:var(--branco);--i:4"></i>
+          <i class="t q-tr"      style="--a:var(--azul-claro);--b:var(--azul-escuro);--i:5"></i>
+          <i class="t q-tl"      style="--a:var(--azul-claro);--b:var(--azul-escuro);--i:6"></i>
+        </div>
+        <figcaption>Toque ou passe o mouse nos azulejos para girá-los.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="servicos" id="servicos">
+    <div class="servicos__topo">
+      <div class="wrap cab">
+        <h2>Do apartamento à fachada da loja</h2>
+        <p>Três frentes de trabalho com o mesmo cuidado no preparo, no acabamento e na limpeza. Escolha o serviço e peça o orçamento direto pelo WhatsApp.</p>
+      </div>
+    </div>
+    <div class="faixas">
+      <article class="faixa">
+        <i class="t q-tl" style="--a:var(--azul-claro);--b:var(--azul-escuro)" aria-hidden="true"></i>
+        <h3>Pintura residencial</h3>
+        <p>Casas e apartamentos pintados por dentro e por fora, com os móveis protegidos durante a obra.</p>
+        <ul>
+          <li>Paredes e tetos internos</li>
+          <li>Fachadas e muros</li>
+          <li>Portões, grades e esquadrias</li>
+        </ul>
+        <a class="link-pinta" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura%20residencial." target="_blank" rel="noopener">Pedir orçamento residencial</a>
+      </article>
+      <article class="faixa faixa--claro">
+        <i class="t circ" style="--a:var(--azul-escuro);--b:var(--azul-claro)" aria-hidden="true"></i>
+        <h3>Pintura comercial</h3>
+        <p>Lojas, escritórios, clínicas e condomínios, com cronograma combinado para atrapalhar o mínimo possível.</p>
+        <ul>
+          <li>Salas, lojas e escritórios</li>
+          <li>Áreas comuns de condomínios</li>
+          <li>Fachadas comerciais</li>
+        </ul>
+        <a class="link-pinta" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura%20comercial." target="_blank" rel="noopener">Pedir orçamento comercial</a>
+      </article>
+      <article class="faixa faixa--nevoa">
+        <i class="t tri" style="--a:var(--azul-escuro);--b:var(--azul-claro)" aria-hidden="true"></i>
+        <h3>Revitalização de ambientes</h3>
+        <p>Para o espaço que precisa de mais do que uma demão nova: corrigimos a parede antes de pintar.</p>
+        <ul>
+          <li>Trincas e fissuras</li>
+          <li>Massa corrida e regularização</li>
+          <li>Manchas, mofo e renovação de cores</li>
+        </ul>
+        <a class="link-pinta" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20revitaliza%C3%A7%C3%A3o%20de%20ambiente." target="_blank" rel="noopener">Pedir orçamento de revitalização</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec processo" id="processo">
+    <div class="wrap">
+      <div class="cab">
+        <h2>Da primeira mensagem à entrega</h2>
+        <p>Você sabe o que vai acontecer em cada etapa, do orçamento ao último acabamento.</p>
+      </div>
+      <ol class="passos" style="list-style:none;margin:0;padding:0">
+        <li class="passo">
+          <span class="passo__num" aria-hidden="true">1</span>
+          <div>
+            <h3>Conversa pelo WhatsApp</h3>
+            <p>Conte o que precisa pintar ou reparar. Fotos do ambiente ajudam a entender o serviço.</p>
+          </div>
+        </li>
+        <li class="passo">
+          <span class="passo__num" aria-hidden="true">2</span>
+          <div>
+            <h3>Visita e orçamento</h3>
+            <p>Avaliamos as paredes, medimos a área e passamos um orçamento com material e prazo.</p>
+          </div>
+        </li>
+        <li class="passo">
+          <span class="passo__num" aria-hidden="true">3</span>
+          <div>
+            <h3>Preparo e pintura</h3>
+            <p>Protegemos piso e móveis, corrigimos as imperfeições e aplicamos as demãos necessárias.</p>
+          </div>
+        </li>
+        <li class="passo">
+          <span class="passo__num" aria-hidden="true">4</span>
+          <div>
+            <h3>Entrega com o local limpo</h3>
+            <p>Retiramos a proteção, limpamos tudo e conferimos o acabamento com você.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec exp" id="experiencia">
+    <div class="wrap">
+      <div class="exp__grid">
+        <h2>35 anos de obra no currículo</h2>
+        <div class="exp__texto">
+          <p>São <strong>35 anos de experiência</strong> no mercado de pintura. Esse tempo ensina o que nem sempre aparece no orçamento: preparar bem a superfície, indicar a tinta certa para cada ambiente e respeitar a rotina de quem está em casa ou no trabalho.</p>
+          <p>O resultado é uma pintura que dura mais e um ambiente entregue pronto para usar.</p>
+        </div>
+      </div>
+      <div class="pontos">
+        <div>
+          <h3>Preparo antes da tinta</h3>
+          <p>Lixa, massa e correção de fissuras para o acabamento ficar uniforme.</p>
+        </div>
+        <div>
+          <h3>Material certo para cada superfície</h3>
+          <p>Parede interna, fachada, metal ou madeira: cada uma pede um produto.</p>
+        </div>
+        <div>
+          <h3>Ambiente entregue limpo</h3>
+          <p>Piso, móveis e esquadrias protegidos durante todo o serviço.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contato" id="contato">
+    <i class="t q-br contato__deco" aria-hidden="true"></i>
+    <div class="wrap contato__grid">
+      <div>
+        <h2>Vamos renovar seu espaço?</h2>
+        <p class="contato__lead">Mande uma mensagem contando o que precisa pintar ou reparar. Fotos do local ajudam a agilizar o orçamento.</p>
+        <div class="acoes">
+          <a class="btn btn--claro" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.2a8.5 8.5 0 1 1 15.5-4.7z"/><path d="M9 10.5h6M9 13.5h4"/></svg>
+            <span>Pedir orçamento no WhatsApp</span>
+          </a>
+          <a class="btn btn--linha-clara" href="https://www.instagram.com/dfreparos_/" target="_blank" rel="noopener">Ver trabalhos no Instagram</a>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <div>
+          <span class="cartao__rot">WhatsApp</span>
+          <div class="cartao__linha">
+            <span class="cartao__num" id="numero">(61) 99276-5317</span>
+            <button class="btn btn--linha-clara btn--sm copiar" id="copiar" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg>
+              <span class="copiar__txt" aria-live="polite">Copiar número</span>
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <span class="cartao__rot">Instagram</span>
+          <a class="link-pinta" href="https://www.instagram.com/dfreparos_/" target="_blank" rel="noopener">@dfreparos_</a>
+        </div>
+        <hr>
+        <div>
+          <span class="cartao__rot">Atendimento</span>
+          <span class="cartao__txt">Distrito Federal e entorno</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap rodape__in">
+    <a class="marca" href="#inicio" aria-label="DF Reparos, voltar ao início">
+      <span class="marca__sinal" aria-hidden="true">
+        <i class="t q-br" style="--a:var(--azul-claro);--b:var(--azul-escuro)"></i>
+        <i class="t cheio" style="--a:var(--azul-claro)"></i>
+        <i class="t cheio" style="--a:var(--azul-escuro)"></i>
+        <i class="t q-tl" style="--a:var(--azul-escuro);--b:var(--azul-claro)"></i>
+      </span>
+      <span class="marca__nome">DF <span>Reparos</span></span>
+    </a>
+    <nav aria-label="Rodapé">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como trabalhamos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="https://www.instagram.com/dfreparos_/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="rodape__pe">© 2026 DF Reparos. Pintura residencial, comercial e revitalização de ambientes, com 35 anos de experiência no mercado.</p>
+  </div>
+</footer>
+
+<a class="flutuante" href="https://wa.me/5561992765317?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20pintura." target="_blank" rel="noopener" aria-label="Pedir orçamento no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.2a8.5 8.5 0 1 1 15.5-4.7z"/><path d="M9 10.5h6M9 13.5h4"/></svg>
+  <span class="flutuante__txt">Pedir orçamento</span>
+</a>
+
+<script>
+(() => {
+  const topo = document.getElementById('topo');
+  const hamb = document.getElementById('hamb');
+  const menu = document.getElementById('menu');
+
+  const aoRolar = () => topo.classList.toggle('rolou', window.scrollY > 8);
+  aoRolar();
+  window.addEventListener('scroll', aoRolar, { passive: true });
+
+  const fechar = () => {
+    menu.classList.remove('aberto');
+    hamb.setAttribute('aria-expanded', 'false');
+    hamb.setAttribute('aria-label', 'Abrir menu');
+  };
+  hamb.addEventListener('click', () => {
+    const aberto = menu.classList.toggle('aberto');
+    hamb.setAttribute('aria-expanded', String(aberto));
+    hamb.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+  });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) fechar(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fechar(); });
+
+  // No celular, um toque gira o azulejo
+  document.querySelectorAll('.azulejos .t').forEach((t) => {
+    let giro = 0;
+    t.addEventListener('click', () => {
+      if (window.matchMedia('(hover: hover)').matches) return;
+      giro += 90;
+      t.style.transition = 'transform .55s cubic-bezier(.2,.8,.2,1)';
+      t.style.transform = 'rotate(' + giro + 'deg)';
+    });
+  });
+
+  const botao = document.getElementById('copiar');
+  const numero = document.getElementById('numero');
+  const rotulo = botao.querySelector('.copiar__txt');
+  let timer;
+  const avisar = (msg) => {
+    rotulo.textContent = msg;
+    botao.classList.add('ok');
+    clearTimeout(timer);
+    timer = setTimeout(() => { rotulo.textContent = 'Copiar número'; botao.classList.remove('ok'); }, 2400);
+  };
+  const selecionar = () => {
+    const r = document.createRange();
+    r.selectNodeContents(numero);
+    const s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    avisar('Número selecionado');
+  };
+  botao.addEventListener('click', () => {
+    try {
+      navigator.clipboard.writeText('(61) 99276-5317').then(() => avisar('Número copiado'), selecionar);
+    } catch (e) {
+      selecionar();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
